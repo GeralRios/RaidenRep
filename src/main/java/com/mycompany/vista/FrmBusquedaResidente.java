@@ -31,24 +31,24 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         panelImage2 = new org.edisoncor.gui.panel.PanelImage();
         jSeparator1 = new javax.swing.JSeparator();
         labelRect1 = new org.edisoncor.gui.label.LabelRect();
-        TxtNumeroId = new org.edisoncor.gui.textField.TextField();
         labelRect2 = new org.edisoncor.gui.label.LabelRect();
-        TxtNombre = new org.edisoncor.gui.textField.TextField();
+        TxtSegundoNombre = new org.edisoncor.gui.textField.TextField();
         BtnConsultar = new org.edisoncor.gui.button.ButtonIcon();
         panelShadow1 = new org.edisoncor.gui.panel.PanelShadow();
         labelRect3 = new org.edisoncor.gui.label.LabelRect();
-        buttonAero1 = new org.edisoncor.gui.button.ButtonAero();
+        BtnAdicionar = new org.edisoncor.gui.button.ButtonAero();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TblRegistroResidente = new javax.swing.JTable();
         BtnGrabar = new org.edisoncor.gui.button.ButtonAero();
         comboBoxRect1 = new org.edisoncor.gui.comboBox.ComboBoxRect();
         labelRect4 = new org.edisoncor.gui.label.LabelRect();
         labelRect5 = new org.edisoncor.gui.label.LabelRect();
         labelRect6 = new org.edisoncor.gui.label.LabelRect();
-        TxtNombre1 = new org.edisoncor.gui.textField.TextField();
-        TxtNombre2 = new org.edisoncor.gui.textField.TextField();
-        TxtNombre3 = new org.edisoncor.gui.textField.TextField();
+        TxtSegundoApellido = new org.edisoncor.gui.textField.TextField();
         jSpinner1 = new javax.swing.JSpinner();
+        TxtApartamento = new org.edisoncor.gui.textField.TextField();
+        TxtPrimerNombre = new org.edisoncor.gui.textField.TextField();
+        textField2 = new org.edisoncor.gui.textField.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,23 +77,15 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         labelRect1.setForeground(new java.awt.Color(0, 0, 0));
         labelRect1.setText("APARTAMENTO:");
 
-        TxtNumeroId.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNumeroId.setForeground(new java.awt.Color(0, 0, 0));
-        TxtNumeroId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNumeroIdActionPerformed(evt);
-            }
-        });
-
         labelRect2.setBackground(new java.awt.Color(255, 255, 255));
         labelRect2.setForeground(new java.awt.Color(0, 0, 0));
         labelRect2.setText("PRIMER NOMBRE:");
 
-        TxtNombre.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNombre.setForeground(new java.awt.Color(0, 0, 0));
-        TxtNombre.addActionListener(new java.awt.event.ActionListener() {
+        TxtSegundoNombre.setBackground(new java.awt.Color(255, 255, 255));
+        TxtSegundoNombre.setForeground(new java.awt.Color(0, 0, 0));
+        TxtSegundoNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNombreActionPerformed(evt);
+                TxtSegundoNombreActionPerformed(evt);
             }
         });
 
@@ -108,21 +100,21 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         labelRect3.setForeground(new java.awt.Color(0, 0, 0));
         labelRect3.setText("NUMERO ID RESIDENTE:");
 
-        buttonAero1.setBackground(new java.awt.Color(204, 204, 204));
-        buttonAero1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        buttonAero1.setForeground(new java.awt.Color(0, 0, 0));
-        buttonAero1.setText("ADICIONAR");
-        buttonAero1.addActionListener(new java.awt.event.ActionListener() {
+        BtnAdicionar.setBackground(new java.awt.Color(204, 204, 204));
+        BtnAdicionar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BtnAdicionar.setForeground(new java.awt.Color(0, 0, 0));
+        BtnAdicionar.setText("ADICIONAR");
+        BtnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAero1ActionPerformed(evt);
+                BtnAdicionarActionPerformed(evt);
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setBorder(new javax.swing.border.MatteBorder(null));
-        jTable1.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblRegistroResidente.setBackground(new java.awt.Color(255, 255, 255));
+        TblRegistroResidente.setBorder(new javax.swing.border.MatteBorder(null));
+        TblRegistroResidente.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        TblRegistroResidente.setForeground(new java.awt.Color(0, 0, 0));
+        TblRegistroResidente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -134,11 +126,11 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                 "NUMERO ID RESIDENTE ", "FECHA DE INGRESO", "FECHA DE RETIRO"
             }
         ));
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable1.setGridColor(new java.awt.Color(51, 51, 51));
-        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(jTable1);
-        jTable1.getAccessibleContext().setAccessibleName("");
+        TblRegistroResidente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TblRegistroResidente.setGridColor(new java.awt.Color(51, 51, 51));
+        TblRegistroResidente.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(TblRegistroResidente);
+        TblRegistroResidente.getAccessibleContext().setAccessibleName("");
 
         BtnGrabar.setBackground(new java.awt.Color(204, 204, 204));
         BtnGrabar.setForeground(new java.awt.Color(0, 0, 0));
@@ -159,7 +151,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(comboBoxRect1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(buttonAero1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelShadow1Layout.createSequentialGroup()
                         .addGap(285, 285, 285)
                         .addComponent(BtnGrabar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -174,7 +166,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(panelShadow1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelRect3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonAero1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(comboBoxRect1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,29 +187,21 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         labelRect6.setForeground(new java.awt.Color(0, 0, 0));
         labelRect6.setText("SEGUNDO APELLIDO:");
 
-        TxtNombre1.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNombre1.setForeground(new java.awt.Color(0, 0, 0));
-        TxtNombre1.addActionListener(new java.awt.event.ActionListener() {
+        TxtSegundoApellido.setBackground(new java.awt.Color(255, 255, 255));
+        TxtSegundoApellido.setForeground(new java.awt.Color(0, 0, 0));
+        TxtSegundoApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNombre1ActionPerformed(evt);
+                TxtSegundoApellidoActionPerformed(evt);
             }
         });
 
-        TxtNombre2.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNombre2.setForeground(new java.awt.Color(0, 0, 0));
-        TxtNombre2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNombre2ActionPerformed(evt);
-            }
-        });
+        TxtApartamento.setBackground(new java.awt.Color(255, 255, 255));
+        TxtApartamento.setForeground(new java.awt.Color(0, 0, 0));
 
-        TxtNombre3.setBackground(new java.awt.Color(255, 255, 255));
-        TxtNombre3.setForeground(new java.awt.Color(0, 0, 0));
-        TxtNombre3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TxtNombre3ActionPerformed(evt);
-            }
-        });
+        TxtPrimerNombre.setBackground(new java.awt.Color(255, 255, 255));
+        TxtPrimerNombre.setForeground(new java.awt.Color(0, 0, 0));
+
+        textField2.setText("textField2");
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -232,23 +216,25 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                             .addComponent(labelRect5, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
                             .addComponent(labelRect2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TxtPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
                         .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(labelRect6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRect4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelImage1Layout.createSequentialGroup()
+                                .addComponent(labelRect4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TxtSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelImage1Layout.createSequentialGroup()
+                                .addComponent(labelRect6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TxtSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelImage1Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TxtNumeroId, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TxtApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
                         .addComponent(BtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelImage1Layout.createSequentialGroup()
@@ -263,7 +249,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                         .addComponent(panelShadow1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         panelImage1Layout.setVerticalGroup(
             panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,23 +263,29 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelImage1Layout.createSequentialGroup()
-                        .addComponent(BtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(TxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRect4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelRect2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TxtNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BtnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TxtNumeroId, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelRect6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelRect5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(labelRect1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TxtApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtPrimerNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TxtSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelRect4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(labelRect2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelImage1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelRect5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelImage1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(TxtSegundoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelImage1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelRect6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelImage1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -344,6 +336,14 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     private void TxtNombre3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombre3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtNombre3ActionPerformed
+
+    private void TxtSegundoApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSegundoApellidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtSegundoApellidoActionPerformed
+
+    private void TxtSegundoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSegundoNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtSegundoNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,19 +412,18 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.edisoncor.gui.button.ButtonAero BtnAdicionar;
     private org.edisoncor.gui.button.ButtonIcon BtnConsultar;
     private org.edisoncor.gui.button.ButtonAero BtnGrabar;
-    private org.edisoncor.gui.textField.TextField TxtNombre;
-    private org.edisoncor.gui.textField.TextField TxtNombre1;
-    private org.edisoncor.gui.textField.TextField TxtNombre2;
-    private org.edisoncor.gui.textField.TextField TxtNombre3;
-    private org.edisoncor.gui.textField.TextField TxtNumeroId;
-    private org.edisoncor.gui.button.ButtonAero buttonAero1;
+    private javax.swing.JTable TblRegistroResidente;
+    private org.edisoncor.gui.textField.TextField TxtApartamento;
+    private org.edisoncor.gui.textField.TextField TxtPrimerNombre;
+    private org.edisoncor.gui.textField.TextField TxtSegundoApellido;
+    private org.edisoncor.gui.textField.TextField TxtSegundoNombre;
     private org.edisoncor.gui.comboBox.ComboBoxRect comboBoxRect1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTable jTable1;
     private org.edisoncor.gui.label.LabelRect labelRect1;
     private org.edisoncor.gui.label.LabelRect labelRect2;
     private org.edisoncor.gui.label.LabelRect labelRect3;
@@ -435,6 +434,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     private org.edisoncor.gui.panel.PanelImage panelImage1;
     private org.edisoncor.gui.panel.PanelImage panelImage2;
     private org.edisoncor.gui.panel.PanelShadow panelShadow1;
+    private org.edisoncor.gui.textField.TextField textField2;
     // End of variables declaration//GEN-END:variables
 
     public org.edisoncor.gui.button.ButtonIcon getBtnConsultar() {
