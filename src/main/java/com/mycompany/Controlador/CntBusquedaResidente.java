@@ -9,6 +9,7 @@ import com.mycompany.Modelo.BusquedaResidenteDAO;
 import com.mycompany.vista.FrmBusquedaResidente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
