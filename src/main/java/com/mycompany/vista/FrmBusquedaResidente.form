@@ -497,9 +497,9 @@
           </Properties>
         </Component>
         <Component class="org.edisoncor.gui.textField.TextField" name="textField2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="textField2"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField2ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

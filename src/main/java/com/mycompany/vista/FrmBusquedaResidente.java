@@ -201,7 +201,11 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         TxtPrimerNombre.setBackground(new java.awt.Color(255, 255, 255));
         TxtPrimerNombre.setForeground(new java.awt.Color(0, 0, 0));
 
-        textField2.setText("textField2");
+        textField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelImage1Layout = new javax.swing.GroupLayout(panelImage1);
         panelImage1.setLayout(panelImage1Layout);
@@ -344,6 +348,10 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     private void TxtSegundoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtSegundoNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtSegundoNombreActionPerformed
+
+    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField2ActionPerformed
 
     /**
      * @param args the command line arguments
