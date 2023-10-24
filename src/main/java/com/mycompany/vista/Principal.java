@@ -4,7 +4,7 @@
 
 package com.mycompany.vista;
 
-import com.mycompany.Controlador.CntMenu;
+import com.mycompany.Controlador.*;
 
 /**
  *
@@ -13,8 +13,8 @@ import com.mycompany.Controlador.CntMenu;
 public class Principal {
 
     public static void main(String[] args) {
-        FrmMenu frmMenu = new FrmMenu();
-        CntMenu cntMenu = new CntMenu(frmMenu); 
-        frmMenu.setVisible(true);
+        FrmAutenticar frmAutenticar = new FrmAutenticar();
+        CntAutenticar cntAutenticar = new CntAutenticar(frmAutenticar);
+        frmAutenticar.setVisible(true);
     }
 }
