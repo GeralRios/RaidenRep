@@ -37,7 +37,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     private void  configurarTablaRegistro(){
         String cabecera[] = {"numero id residente"};
         DefaultTableModel tblModel= new DefaultTableModel (cabecera,0);
-        TblRegistro.setModel((TableModel) dtmRegistro);
+        TblRegistroG.setModel((TableModel) dtmRegistro);
     }   
 
   
@@ -60,7 +60,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         BtnConsultarApartamento = new org.edisoncor.gui.button.ButtonIcon();
         dtmRegistro = new org.edisoncor.gui.panel.PanelShadow();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TblRegistro = new javax.swing.JTable();
+        TblRegistroG = new javax.swing.JTable();
         BtnGrabarTabla = new org.edisoncor.gui.button.ButtonAero();
         BtnLimpiar = new org.edisoncor.gui.button.ButtonAero();
         labelRect4 = new org.edisoncor.gui.label.LabelRect();
@@ -71,7 +71,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         TxtPrimerNombre = new org.edisoncor.gui.textField.TextField();
         TxtPrimerApellido = new org.edisoncor.gui.textField.TextField();
         labelRect3 = new org.edisoncor.gui.label.LabelRect();
-        ComboId = new org.edisoncor.gui.comboBox.ComboBoxRect();
+        TxtTipo = new org.edisoncor.gui.comboBox.ComboBoxRect();
         jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,11 +120,11 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         dtmRegistro.setBackground(new java.awt.Color(0, 0, 0));
         dtmRegistro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        TblRegistro.setBackground(new java.awt.Color(255, 255, 255));
-        TblRegistro.setBorder(new javax.swing.border.MatteBorder(null));
-        TblRegistro.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        TblRegistro.setForeground(new java.awt.Color(0, 0, 0));
-        TblRegistro.setModel(new javax.swing.table.DefaultTableModel(
+        TblRegistroG.setBackground(new java.awt.Color(255, 255, 255));
+        TblRegistroG.setBorder(new javax.swing.border.MatteBorder(null));
+        TblRegistroG.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        TblRegistroG.setForeground(new java.awt.Color(0, 0, 0));
+        TblRegistroG.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -136,11 +136,11 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                 "ID UNICO", "FECHA INGRESO / COMPRA", "FECHA SALIDA / RETIRO"
             }
         ));
-        TblRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        TblRegistro.setGridColor(new java.awt.Color(51, 51, 51));
-        TblRegistro.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(TblRegistro);
-        TblRegistro.getAccessibleContext().setAccessibleName("");
+        TblRegistroG.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        TblRegistroG.setGridColor(new java.awt.Color(51, 51, 51));
+        TblRegistroG.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(TblRegistroG);
+        TblRegistroG.getAccessibleContext().setAccessibleName("");
 
         BtnGrabarTabla.setBackground(new java.awt.Color(204, 204, 204));
         BtnGrabarTabla.setForeground(new java.awt.Color(0, 0, 0));
@@ -221,11 +221,11 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         labelRect3.setForeground(new java.awt.Color(0, 0, 0));
         labelRect3.setText("TIPO:");
 
-        ComboId.setBackground(new java.awt.Color(255, 255, 255));
-        ComboId.setForeground(new java.awt.Color(0, 0, 0));
-        ComboId.addActionListener(new java.awt.event.ActionListener() {
+        TxtTipo.setBackground(new java.awt.Color(255, 255, 255));
+        TxtTipo.setForeground(new java.awt.Color(0, 0, 0));
+        TxtTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboIdActionPerformed(evt);
+                TxtTipoActionPerformed(evt);
             }
         });
 
@@ -247,7 +247,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                     .addComponent(labelRect3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ComboId, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                    .addComponent(TxtTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                     .addComponent(TxtApartamento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addComponent(BtnConsultarApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,7 +300,7 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
                     .addComponent(BtnConsultarApartamento, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelImage1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ComboId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelRect3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -337,9 +337,9 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComboIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboIdActionPerformed
+    private void TxtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboIdActionPerformed
+    }//GEN-LAST:event_TxtTipoActionPerformed
 
     private void TxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtNombreActionPerformed
         // TODO add your handling code here:
@@ -391,15 +391,15 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
     private org.edisoncor.gui.button.ButtonIcon BtnConsultarApartamento;
     private org.edisoncor.gui.button.ButtonAero BtnGrabarTabla;
     private org.edisoncor.gui.button.ButtonAero BtnLimpiar;
-    private org.edisoncor.gui.comboBox.ComboBoxRect ComboId;
     private org.edisoncor.gui.label.LabelRect PrimerApellido;
     private org.edisoncor.gui.label.LabelRect PrimerNombre;
-    private javax.swing.JTable TblRegistro;
+    private javax.swing.JTable TblRegistroG;
     private org.edisoncor.gui.textField.TextField TxtApartamento;
     private org.edisoncor.gui.textField.TextField TxtPrimerApellido;
     private org.edisoncor.gui.textField.TextField TxtPrimerNombre;
     private org.edisoncor.gui.textField.TextField TxtSegundoApellido;
     private org.edisoncor.gui.textField.TextField TxtSegundoNombre;
+    private org.edisoncor.gui.comboBox.ComboBoxRect TxtTipo;
     private org.edisoncor.gui.panel.PanelShadow dtmRegistro;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -444,14 +444,6 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         this.BtnLimpiar = BtnLimpiar;
     }
 
-    public org.edisoncor.gui.comboBox.ComboBoxRect getComboId() {
-        return ComboId;
-    }
-
-    public void setComboId(org.edisoncor.gui.comboBox.ComboBoxRect ComboId) {
-        this.ComboId = ComboId;
-    }
-
     public org.edisoncor.gui.label.LabelRect getPrimerApellido() {
         return PrimerApellido;
     }
@@ -468,12 +460,12 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         this.PrimerNombre = PrimerNombre;
     }
 
-    public javax.swing.JTable getTblRegistro() {
-        return TblRegistro;
+    public javax.swing.JTable getTblRegistroG() {
+        return TblRegistroG;
     }
 
-    public void setTblRegistro(javax.swing.JTable TblRegistro) {
-        this.TblRegistro = TblRegistro;
+    public void setTblRegistroG(javax.swing.JTable TblRegistroG) {
+        this.TblRegistroG = TblRegistroG;
     }
 
     public org.edisoncor.gui.textField.TextField getTxtApartamento() {
@@ -514,6 +506,14 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
 
     public void setTxtSegundoNombre(org.edisoncor.gui.textField.TextField TxtSegundoNombre) {
         this.TxtSegundoNombre = TxtSegundoNombre;
+    }
+
+    public org.edisoncor.gui.comboBox.ComboBoxRect getTxtTipo() {
+        return TxtTipo;
+    }
+
+    public void setTxtTipo(org.edisoncor.gui.comboBox.ComboBoxRect TxtTipo) {
+        this.TxtTipo = TxtTipo;
     }
 
     public org.edisoncor.gui.panel.PanelShadow getDtmRegistro() {
@@ -596,6 +596,4 @@ public class FrmBusquedaResidente extends javax.swing.JFrame {
         this.panelImage2 = panelImage2;
     }
 
- 
-    
 }

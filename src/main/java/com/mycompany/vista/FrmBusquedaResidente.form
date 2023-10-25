@@ -59,7 +59,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="ComboId" pref="208" max="32767" attributes="0"/>
+                      <Component id="TxtTipo" pref="208" max="32767" attributes="0"/>
                       <Component id="TxtApartamento" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -129,7 +129,7 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="ComboId" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="TxtTipo" min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="labelRect3" pref="33" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -297,7 +297,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="TblRegistro">
+                <Component class="javax.swing.JTable" name="TblRegistroG">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -475,7 +475,7 @@
             <Property name="text" type="java.lang.String" value="TIPO:"/>
           </Properties>
         </Component>
-        <Component class="org.edisoncor.gui.comboBox.ComboBoxRect" name="ComboId">
+        <Component class="org.edisoncor.gui.comboBox.ComboBoxRect" name="TxtTipo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -485,7 +485,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboIdActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtTipoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator2">

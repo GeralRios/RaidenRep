@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
 public class BusquedaResidenteDAO {
     private Session sesion;
     private Transaction trns;
-    private Static final boolean OK;
+    
     
     private void iniciaOperacion(){
         sesion = HibernateUtil.getSessionFactory().openSession();

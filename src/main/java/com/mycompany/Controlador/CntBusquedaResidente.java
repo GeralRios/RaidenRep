@@ -13,154 +13,125 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ *jkkkk
  * @author sistemas
  */
 public class CntBusquedaResidente implements ActionListener {
 
     private FrmBusquedaResidente frmBusquedaResidente;
-    private BusquedaResidenteDAO buscaResidenteDAO;
+    private BusquedaResidenteDAO busquedaResidenteDAO;
     private BusquedaResidente busquedaResidente;
-    private Set<Registro> registro;
+    private Set<Registro> registroG;
     private RegistroDAO registroDAO;
-
-    public CntBusquedaResidente(FrmBusquedaResidente frmBusquedaResidente, BusquedaResidenteDAO buscaResidenteDAO, BusquedaResidente busquedaResidente, Set<Registro> registro, RegistroDAO registroDAO) {
+    private Registro registro;
+    
+    
+    public CntBusquedaResidente(FrmBusquedaResidente frmBusquedaResidente,BusquedaResidenteDAO busquedaResidenteDAO){
         this.frmBusquedaResidente = frmBusquedaResidente;
-        this.buscaResidenteDAO = buscaResidenteDAO;
-        this.busquedaResidente = busquedaResidente;
-        this.registro = registro;
-        this.registroDAO = registroDAO;
+        this.busquedaResidenteDAO = busquedaResidenteDAO;
         registrarControladores();
-
     }
-
-    public void registrarControladores() {
-        frmBusquedaResidente.getBtnConsultarApartamento().addActionListener(this);
+    public void registrarControladores(){
         frmBusquedaResidente.getBtnGrabarTabla().addActionListener(this);
+        frmBusquedaResidente.getBtnConsultarApartamento().addActionListener(this);
         frmBusquedaResidente.getBtnLimpiar().addActionListener(this);
     }
-
-    public void crearListado() {
-        DefaultTableModel dtmRegistro = frmBusquedaResidente.getDtmRegistro();
-        registro = new HashSet();
-        int filas = dtmRegistro.getRowCount();
-        int columnas = dtmRegistro.getColumnCount();
-        String registro = null;
-        String registro = null;
-        String registro = null;
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                registro = (String) dtmRegistro.getValueAt(i, j);
-            }
-            registro.add(new Registro(numeroIdResidente, BusquedaResidente));
-        }
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                correo = (String) dtmRegistro.getValueAt(i, j);
-            }
-            registro.add(new Registro(numeroIdResidente, BusquedaResidente));
-        }
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                correo = (String) dtmRegistro.getValueAt(i, j);
-            }
-            registro.add(new Registro(numeroIdResidente, BusquedaResidente));
-        }
+  public void crearListadoRegistro() {
+    DefaultTableModel dtmRegistro = frmBusquedaResidente.getApartamento();
+    registroG = new HashSet<>();
+    int filas = dtmRegistro.getRowCount();
+    for (int i = 0; i < filas; i++) {
+        String registro = (String) dtmRegistro.getValueAt(i, 0); // Supongo que la columna es la 0.
+        registroG.add(new Registro(registro, busquedaResidente));
     }
-
-    public Registro obtenerBusquedaResidente() {
-        int numeroIdApartamento = Integer.parseInt(frmBusquedaResidente.getTxtApartamento().getText());
-        String primerNombre = frmBusquedaResidente.getTxtPrimerNombre().getText();
-        String SegundoNombre = frmBusquedaResidente.getTxtSegundoNombre().getText();
-        String primerApellido = frmBusquedaResidente.getTxtPrimerApellido().getText();
-        String segundoApelliudo = frmBusquedaResidente.getTxtSegundoApellido().getText();
-        return new BusquedaResidente(Apartamento, PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido);
+}
+public BusquedaResidente obtenerResidente() {
+    int Apartamento = 0;
+    try {
+        Apartamento = Integer.parseInt(frmBusquedaResidente.getTxtApartamento().getText());
+    } catch (NumberFormatException e) {
+        // Manejar la excepción, por ejemplo, mostrar un mensaje de error.
     }
-
-    public void grabar() {
-        obtenerBusquedaResidente();
+    
+    String Tipo = frmBusquedaResidente.getTxtTipo().getText();
+    String PrimerNombre = frmBusquedaResidente.getTxtPrimerNombre().getText();
+    String SegundoNombre = frmBusquedaResidente.getTxtSegundoNombre().getText();
+    String PrimerApellido = frmBusquedaResidente.getTxtPrimerApellido().getText();
+    String SegundoApellido = frmBusquedaResidente.getTxtSegundoApellido().getText();
+    
+    return new BusquedaResidente(Apartamento, Tipo, PrimerNombre, SegundoNombre, PrimerApellido, SegundoApellido, registroG);
+}
+    public void grabar(){
+        obtenerResidente();
         crearListadoRegistro();
         busquedaResidente.setCorreosElectronicos(Registro);
-        if (buscaResidenteDAO.grabar(obtenerBusquedaResidente())) {
-            JOptionPane.showMessageDialog(frmBusquedaResidente, "empleado registrado");
-        } else {
-            JOptionPane.showMessageDialog(frmBusquedaResidente, "EMPLEADO NO REGISTRADO");
+        if (busquedaResidenteDAO.grabar(obtenerEmpleado())) {
+            JOptionPane.showMessageDialog(frmBusquedaResidente,"empleado registrado");   
+        }else{
+            JOptionPane.showMessageDialog(frmBusquedaResidente, "EMPLEADO NO REGISTRADO");  
         }
     }
-
-    private void consultar() {
-        Integer numeroIdApartamento = Integer.valueOf(frmBusquedaResidente.getTxtApartamento().getText());
-        busquedaResidente = buscaResidenteDAO.consultar(numeroIdApartamento);
+   private void consultar() {
+        Integer id = Integer.valueOf(frmBusquedaResidente.getTxtApartamento().getText());
+        busquedaResidente = busquedaResidenteDAO.consultar(Apartamento);
         if (busquedaResidente != null) {
             frmBusquedaResidente.getTxtPrimerNombre().setText(busquedaResidente.getPrimerNombre());
+            frmBusquedaResidente.getChkFechaNacimiento().setDate(empleado.getFechaNacimiento());
             crearListadoCorreosElectronicos();
         } else {
             JOptionPane.showMessageDialog(frmBusquedaResidente, "Empleado No Encontrado");
         }
     }
 
-    public void eliminar() {
-        Integer id = Integer.parseInt(frmBusquedaResidente.getTxt().getText());
-        busquedaResidente = busquedaResidenteDAO.consultar(id);
-        if (buscaResidenteDAO.eliminar(busquedaResidente)) {
-            JOptionPane.showMessageDialog(frmBusquedaResidente, "Empleado borrado");
-        } else {
-            JOptionPane.showMessageDialog(frmBusquedaResidente, "Empleado no borrado");
-        }
-
-    }
-
     public void limpiarTabla() {
-        int a = frmBusquedaResidente.getdtmRegistro().getRowCount() - 1;
+        int a = frmBusquedaResidente.getDtmRegistro().getRowCount() - 1;
         for (int i = a; i >= 0; i--) {
-            frmBusquedaResidente.getdtmRegistro().removeRow(i);
+            frmBusquedaResidente.getDtmRegistro().removeRow(i);
         }
     }
 
     public void limpiar() {
-        frmBusquedaResidente.getTxtId().setText("");
-        frmBusquedaResidente.getTxtNombre().setText("");
-        frmBusquedaResidente.getChkFechaNacimiento().setDate(null);
-
+        frmBusquedaResidente.getTxtApartamento().setText("");
+        frmBusquedaResidente.getTxtTipo().setText("");
+        frmBusquedaResidente.getTxtPrimerNombre().setText("");
+        frmBusquedaResidente.getTxtSegundoNombre().setText("");
+        frmBusquedaResidente.getTxtPrimerApellido().setText("");
+        frmBusquedaResidente.getTxtSegundoApellido().setText("");
     }
-
-    private void obtenerCorreo() {
-        String correo = frmBusquedaResidente.getTxtCorreosElectronicos().getText();
+    
+    private void obtenerCorreo(){
+        String correo = frmBusquedaResidente.getTxtTipo().getText();
         Object datos[] = {correo};
-        frmBusquedaResidente.getDtmCorreosElectronicos().addRow(datos);
-        frmBusquedaResidente.getTxtCorreosElectronicos().setText("");
+        frmBusquedaResidente.getDtmRegistro().addRow(datos);
+        frmBusquedaResidente.getTxtTipo().setText("");
     }
-
-    public void eliminarCorreo() {
-        int numeroFila = frmBusquedaResidente.TblRegistro().getSelectedRow();
-        int respuesta = JOptionPane.showConfirmDialog(frmBusquedaResidente, "Quiere eliminar  el correo seleccionado ? "
-                + frmBusquedaResidente.getDtmCorreosElectronicos().getValueAt(numeroFila, 0));
-        String correo = frmBusquedaResidente.getDtmCorreosElectronicos().getValueAt(numeroFila, 0).toString();
-        if (respuesta == JOptionPane.YES_OPTION) {
-            correoElectronicoDAO = new CorreoElectronicoDAO();
-            Empleado empleado = new Empleado(Integer.parseInt(frmBusquedaResidente.getTxtId().getText()));
-            CorreoElectronico correoElectronico = new CorreoElectronico(correo, empleado);
-            correoElectronicoDAO.eliminar(correoElectronico);
-            frmBusquedaResidente.getDtmCorreosElectronicos().removeRow(numeroFila);
+    
+    public void eliminarCorreo(){
+        int numeroFila = frmBusquedaResidente.getTblRegistroG().getSelectedRow();
+        int respuesta = JOptionPane.showConfirmDialog(frmBusquedaResidente, "Quiere eliminar  el correo seleccionado ? " +
+                frmBusquedaResidente.getDtmRegistro().getValueAt(numeroFila, 0));
+        String correo = frmBusquedaResidente.getDtmRegistro().getValueAt(numeroFila, 0).toString();
+        if(respuesta == JOptionPane.YES_OPTION){
+            registroDAO = new RegistroDAO();
+            BusquedaResidente busquedaResidente = new Empleado(Integer.parseInt(frmBusquedaResidente.getTxtApartamento().getText()));
+            Registro correoElectronico = new Registro(correo, busquedaResidente);
+            registroDAO.eliminar(correoElectronico);
+            frmBusquedaResidente.getDtmCorreosElectronicos().removeRow(numeroFila);   
         }
-
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == frmBusquedaResidente.getBtnConsultarApartamento()) {
+        if(e.getSource()== frmBusquedaResidente.getBtnGrabarTabla()){
             obtenerCorreo();
-        } else if (e.getSource() == frmBusquedaResidente.getBtnAdicionarEnTabla()) {
-            grabar();
+        }else if (e.getSource()== frmBusquedaResidente.getBtnConsultarApartamento()){
+            consultar();
+        }else if (e.getSource() == frmBusquedaResidente.getBtnLimpiar()){
+            eliminar();
+            consultar();
+        }else {
             limpiar();
-            limpiarTabla();
-        } else if (e.getSource() == frmBusquedaResidente.getBtnGrabarTabla()) {
-
-        } else {
-            limpiar();
-            limpiarTabla();
         }
     }
 
