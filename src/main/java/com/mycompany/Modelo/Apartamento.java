@@ -1,9 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to chahnge this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this teghghgmplateb
  */
 package com.mycompany.Modelo;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -13,10 +14,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "apartamento")
 
-public class Apartamento {
+public class Apartamento implements Serializable {
 
     @Id
-    @Column(name = "ID_APARTAMENTO", strategy = Generatedvalue.ENTITY)
+    @GeneratedValue(strategy = Generatedvalue.ENTITY)
+    @Column(name = "ID_APARTAMENTO")
     private Integer idApartamento;
 
     @Column(name = "NUMERO_APARTAMENTO")
@@ -36,7 +38,7 @@ public class Apartamento {
 
     @Column(name = "ASIGNADO")
     private String asignado;
-
+    
     public Apartamento() {
     }
 
