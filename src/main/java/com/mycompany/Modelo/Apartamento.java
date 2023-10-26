@@ -38,6 +38,11 @@ public class Apartamento implements Serializable {
 
     @Column(name = "ASIGNADO")
     private String asignado;
+
+    //Hay que cambiar las variables de las colecciones de lista según como están en el controlador
+    @OneToMany(mappedBy = "apartamento", cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_APARTAMENTO")
+    private List<Residentes> residentes = new ArrayList<>();
     
     public Apartamento() {
     }
