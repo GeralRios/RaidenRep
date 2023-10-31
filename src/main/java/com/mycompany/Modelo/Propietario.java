@@ -4,69 +4,88 @@
  */
 package com.mycompany.Modelo;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
  *
  * @author sistemas
- */ 
-    
+ */
+//DONE
 @Entity
-@Table(name="propietaro_apartamento")
+@Table(name = "propietaro_apartamento")
 
-public class Propietario {
+
+        //DONE
+public class Propietario implements Serializable {
+
     @Id
-    @Column(name="ID_PROPIETARIO ")
-    private Integer idPropietario;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "ID_UNICO_PROPIETARIO")
+    private Integer idUnicoPropietario;
+    
+    @ManyToOne
+    @Column(name = "ID_PROPIETARIO")
+    private Persona idPropietario;
 
-    @Column(name="ID_APARTAMENTO_PROPIETARIO ")
-    private Integer idApartamentoPropietario;
-    
-    @Column(name="FECHA_COMPRA")
-    private Integer fechaCompra;
-    
-    @Column(name="FECHA_RETIRO")
-    private Integer fechaRetiro;
+    @ManyToOne
+    @JoinColumn(name = "ID_APARTAMENTO ")
+    private Apartamento idApartamentoPropietario;
+
+    @Column(name = "FECHA_COMPRA")
+    private Date fechaCompra;
+
+    @Column(name = "FECHA_RETIRO")
+    private Date fechaRetiro;
 
     public Propietario() {
     }
 
-    public Propietario(Integer idPropietario, Integer idApartamentoPropietario, Integer fechaCompra, Integer fechaRetiro) {
+    public Propietario(Integer idUnicoPropietario, Persona idPropietario, Apartamento idApartamentoPropietario, Date fechaCompra, Date fechaRetiro) {
+        this.idUnicoPropietario = idUnicoPropietario;
         this.idPropietario = idPropietario;
         this.idApartamentoPropietario = idApartamentoPropietario;
         this.fechaCompra = fechaCompra;
         this.fechaRetiro = fechaRetiro;
     }
 
-    public Integer getIdPropietario() {
+    public Integer getIdUnicoPropietario() {
+        return idUnicoPropietario;
+    }
+
+    public void setIdUnicoPropietario(Integer idUnicoPropietario) {
+        this.idUnicoPropietario = idUnicoPropietario;
+    }
+
+    public Persona getIdPropietario() {
         return idPropietario;
     }
 
-    public void setIdPropietario(Integer idPropietario) {
+    public void setIdPropietario(Persona idPropietario) {
         this.idPropietario = idPropietario;
     }
 
-    public Integer getIdApartamentoPropietario() {
+    public Apartamento getIdApartamentoPropietario() {
         return idApartamentoPropietario;
     }
 
-    public void setIdApartamentoPropietario(Integer idApartamentoPropietario) {
+    public void setIdApartamentoPropietario(Apartamento idApartamentoPropietario) {
         this.idApartamentoPropietario = idApartamentoPropietario;
     }
 
-    public Integer getFechaCompra() {
+    public Date getFechaCompra() {
         return fechaCompra;
     }
 
-    public void setFechaCompra(Integer fechaCompra) {
+    public void setFechaCompra(Date fechaCompra) {
         this.fechaCompra = fechaCompra;
     }
 
-    public Integer getFechaRetiro() {
+    public Date getFechaRetiro() {
         return fechaRetiro;
     }
 
-    public void setFechaRetiro(Integer fechaRetiro) {
+    public void setFechaRetiro(Date fechaRetiro) {
         this.fechaRetiro = fechaRetiro;
     }
 
