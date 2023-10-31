@@ -38,6 +38,9 @@ public class Propietario implements Serializable {
     @Column(name = "FECHA_RETIRO")
     private Date fechaRetiro;
 
+    @OneToMany(mappedBy = "ID_PROPIETARIO", cascade = CascadeType.ALL)
+    private Set<PropietarioApartamentos> listadoPropietarioApartamentos;
+    
     public Propietario() {
     }
 
