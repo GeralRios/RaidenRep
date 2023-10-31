@@ -21,7 +21,7 @@ public class Propietario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "ID_UNICO_PROPIETARIO")
+    @Column(name = "ID_UNICO_PROPIETARIO")
     private Integer idUnicoPropietario;
     
     @ManyToOne
