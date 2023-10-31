@@ -25,11 +25,11 @@ public class Propietario implements Serializable {
     private Integer idUnicoPropietario;
     
     @ManyToOne
-    @Column(name = "ID_PROPIETARIO")
+    @JoinColumn(name = "ID_PROPIETARIO")
     private Persona idPropietario;
 
     @ManyToOne
-    @JoinColumn(name = "ID_APARTAMENTO ")
+    @JoinColumn(name = "ID_APARTAMENTO_PROPIETARIO")
     private Apartamento idApartamentoPropietario;
 
     @Column(name = "FECHA_COMPRA")
@@ -39,18 +39,18 @@ public class Propietario implements Serializable {
     private Date fechaRetiro;
 
     @OneToMany(mappedBy = "ID_PROPIETARIO", cascade = CascadeType.ALL)
-    private Set<PropietarioApartamentos> listadoPropietarioApartamentos;
+    private Set<PropietarioApartamento> listadoPropietarioApartamento;
     
     public Propietario() {
     }
 
-    public Propietario(Integer idUnicoPropietario, Persona idPropietario, Apartamento idApartamentoPropietario, Date fechaCompra, Date fechaRetiro, <any> listadoPropietarioApartamentos) {
+    public Propietario(Integer idUnicoPropietario, Persona idPropietario, Apartamento idApartamentoPropietario, Date fechaCompra, Date fechaRetiro, <any> listadoPropietarioApartamento) {
         this.idUnicoPropietario = idUnicoPropietario;
         this.idPropietario = idPropietario;
         this.idApartamentoPropietario = idApartamentoPropietario;
         this.fechaCompra = fechaCompra;
         this.fechaRetiro = fechaRetiro;
-        this.listadoPropietarioApartamentos = listadoPropietarioApartamentos;
+        this.listadoPropietarioApartamento = listadoPropietarioApartamento;
     }
 
     public Integer getIdUnicoPropietario() {
@@ -93,12 +93,12 @@ public class Propietario implements Serializable {
         this.fechaRetiro = fechaRetiro;
     }
 
-    public <any> getListadoPropietarioApartamentos() {
-        return listadoPropietarioApartamentos;
+    public <any> getListadoPropietarioApartamento() {
+        return listadoPropietarioApartamento;
     }
 
-    public void setListadoPropietarioApartamentos(<any> listadoPropietarioApartamentos) {
-        this.listadoPropietarioApartamentos = listadoPropietarioApartamentos;
+    public void setListadoPropietarioApartamento(<any> listadoPropietarioApartamento) {
+        this.listadoPropietarioApartamento = listadoPropietarioApartamento;
     }
 
     
