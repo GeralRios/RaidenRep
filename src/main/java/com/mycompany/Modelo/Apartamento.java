@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to chahnge this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this teghghgmplateb
- */
 package com.mycompany.Modelo;
 
 import java.io.Serializable;
@@ -14,10 +10,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "apartamento")
 
+//DONE
 public class Apartamento implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = Generatedvalue.ENTITY)
+    @GeneratedValue(strategy = GenerationType.ENTITY)
     @Column(name = "ID_APARTAMENTO")
     private Integer idApartamento;
 
@@ -38,16 +35,14 @@ public class Apartamento implements Serializable {
 
     @Column(name = "ASIGNADO")
     private String asignado;
-
-    //Hay que cambiar las variables de las colecciones de lista según como están en el controlador
-    @OneToMany(mappedBy = "apartamento", cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_APARTAMENTO")
-    private List<Residentes> residentes = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "ID_APARTAMENTO", cascade = CascadeType.ALL)
+    private Set<Apartamentos> listadoApartamentos;
     
     public Apartamento() {
     }
 
-    public Apartamento(Integer idApartamento, Integer numeroApartamento, Integer numeroBloque, Integer numeroPiso, String matriculaApartamento, String idParqueadero, String asignado) {
+    public Apartamento(Integer idApartamento, Integer numeroApartamento, Integer numeroBloque, Integer numeroPiso, String matriculaApartamento, String idParqueadero, String asignado, <any> listadoApartamentos) {
         this.idApartamento = idApartamento;
         this.numeroApartamento = numeroApartamento;
         this.numeroBloque = numeroBloque;
@@ -55,6 +50,7 @@ public class Apartamento implements Serializable {
         this.matriculaApartamento = matriculaApartamento;
         this.idParqueadero = idParqueadero;
         this.asignado = asignado;
+        this.listadoApartamentos = listadoApartamentos;
     }
 
     public Integer getIdApartamento() {
@@ -113,5 +109,10 @@ public class Apartamento implements Serializable {
         this.asignado = asignado;
     }
 
-    
-}
+    public <any> getListadoApartamentos() {
+        return listadoApartamentos;
+    }
+
+    public void setListadoApartamentos(<any> listadoApartamentos) {
+        this.listadoApartamentos = listadoApartamentos;
+    }
