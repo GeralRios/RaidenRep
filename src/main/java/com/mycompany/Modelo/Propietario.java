@@ -44,12 +44,13 @@ public class Propietario implements Serializable {
     public Propietario() {
     }
 
-    public Propietario(Integer idUnicoPropietario, Persona idPropietario, Apartamento idApartamentoPropietario, Date fechaCompra, Date fechaRetiro) {
+    public Propietario(Integer idUnicoPropietario, Persona idPropietario, Apartamento idApartamentoPropietario, Date fechaCompra, Date fechaRetiro, <any> listadoPropietarioApartamentos) {
         this.idUnicoPropietario = idUnicoPropietario;
         this.idPropietario = idPropietario;
         this.idApartamentoPropietario = idApartamentoPropietario;
         this.fechaCompra = fechaCompra;
         this.fechaRetiro = fechaRetiro;
+        this.listadoPropietarioApartamentos = listadoPropietarioApartamentos;
     }
 
     public Integer getIdUnicoPropietario() {
@@ -90,6 +91,14 @@ public class Propietario implements Serializable {
 
     public void setFechaRetiro(Date fechaRetiro) {
         this.fechaRetiro = fechaRetiro;
+    }
+
+    public <any> getListadoPropietarioApartamentos() {
+        return listadoPropietarioApartamentos;
+    }
+
+    public void setListadoPropietarioApartamentos(<any> listadoPropietarioApartamentos) {
+        this.listadoPropietarioApartamentos = listadoPropietarioApartamentos;
     }
 
     
