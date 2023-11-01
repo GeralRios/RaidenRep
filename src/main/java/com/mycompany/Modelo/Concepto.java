@@ -17,10 +17,10 @@ public class Concepto implements Serializable {
     private Integer numeroConcepto;
     
     @Column(name = "VALOR_CONCEPTO")
-    private Persona valorConcepto;
+    private Float valorConcepto;
     
     @Column(name = "INTERESES_MORA")
-    private Persona valorConcepto;
+    private Float valorConcepto;
     
     @OneToMany(mappedBy = "NUMERO_CONCEPTO", cascade = CascadeType.ALL)
     private Set<Concepto> listadoConcepto;
