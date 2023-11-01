@@ -28,7 +28,7 @@ public class Concepto implements Serializable {
     public Concepto() {
     }
 
-    public Concepto(Integer numeroConcepto, Persona valorConcepto, Persona valorConcepto, <any> listadoConcepto) {
+    public Concepto(Integer numeroConcepto, Float valorConcepto, Float valorConcepto, <any> listadoConcepto) {
         this.numeroConcepto = numeroConcepto;
         this.valorConcepto = valorConcepto;
         this.valorConcepto = valorConcepto;
@@ -43,19 +43,19 @@ public class Concepto implements Serializable {
         this.numeroConcepto = numeroConcepto;
     }
 
-    public Persona getValorConcepto() {
+    public Float getValorConcepto() {
         return valorConcepto;
     }
 
-    public void setValorConcepto(Persona valorConcepto) {
+    public void setValorConcepto(Float valorConcepto) {
         this.valorConcepto = valorConcepto;
     }
 
-    public Persona getValorConcepto() {
+    public Float getValorConcepto() {
         return valorConcepto;
     }
 
-    public void setValorConcepto(Persona valorConcepto) {
+    public void setValorConcepto(Float valorConcepto) {
         this.valorConcepto = valorConcepto;
     }
 
