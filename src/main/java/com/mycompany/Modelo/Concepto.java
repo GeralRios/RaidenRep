@@ -10,6 +10,8 @@ import java.io.Serializable;
  *
  * @author camac
  */
+@Entity
+@Table(name = "concepto")
 public class Concepto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
