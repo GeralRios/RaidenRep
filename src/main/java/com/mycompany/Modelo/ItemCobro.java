@@ -9,6 +9,8 @@ import java.io.Serializable;
  *
  * @author camac
  */
+@Entity
+@Table(name = "item_cobro")
 public class ItemCobro implements Serializable {
     @Id
     @ManyToOne
